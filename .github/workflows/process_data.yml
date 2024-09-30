@@ -19,8 +19,6 @@ jobs:
       - name: Clone Private Repository
         run: |
           git clone https://${{ secrets.PROFILE_URL }}:${{secrets.PUBLIC_PAT}}@github.com/${{ secrets.PROFILE_URL }}/supplier2_women_shoes_private.git private_repo
-        env:
-          PUBLIC_PAT: https://${{ secrets.PROFILE_URL }}:${{secrets.PUBLIC_PAT}}@github.com/${{ secrets.PROFILE_URL }}/supplier2_women_shoes_private.git
 
       - name: Set up environment and run script with secrets
         run: |
