@@ -139,3 +139,4 @@ async function main(products) {
 
 // Run the script
 main('private_repo/clean_data/zero_inventory.csv');
+main('private_repo/clean_data/zero_inventory2.csv');
