@@ -29,9 +29,6 @@ jobs:
             SHOP: ${{ secrets.SHOP }}
             SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
 
-      - name: List All Files in Workspace
-        run: find ${{ github.workspace }} -type f
-
       # Step 3: Run the data preprocessing script in the cloned private repo
       - name: Install Node.js dependencies 
         run: npm install axios csv-parser dotenv shopify-api-node fs
@@ -50,6 +47,12 @@ jobs:
 
       - name: Update 0 inventory
         run: node /home/runner/work/supplier2_women_shoes_public/supplier2_women_shoes_public/set_zero_inventory.js
+        env:
+          SHOP: ${{ secrets.SHOP }}
+          SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
+
+      - name: Update 0 inventory
+        run: node /home/runner/work/supplier2_women_shoes_public/supplier2_women_shoes_public/set_zero_inventory2.js
         env:
           SHOP: ${{ secrets.SHOP }}
           SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
